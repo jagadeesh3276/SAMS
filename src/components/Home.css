@@ -1,0 +1,48 @@
+/* Home.css */
+
+/* Testimonial Scroll Container */
+.scroll-container {
+  overflow: hidden;
+  white-space: nowrap;
+  width: 100%;
+  padding: 20px 0;
+  background: white;
+}
+
+/* Scroll Content: make it a long inline-flex so it scrolls */
+.scroll-content {
+  display: inline-flex;
+  gap: 20px;
+  animation: scroll-left 30s linear infinite;
+}
+
+/* Pause on hover */
+.scroll-container:hover .scroll-content {
+  animation-play-state: paused;
+}
+
+/* Cards */
+.card {
+  width: 32rem;
+  height: 15rem;
+  flex-shrink: 0;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid maroon;
+  border-radius: 30px;
+  font-size: 17px;
+}
+
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Keyframes for infinite scroll */
+@keyframes scroll-left {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
